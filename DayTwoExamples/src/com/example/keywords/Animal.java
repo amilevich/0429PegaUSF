@@ -19,7 +19,7 @@ public class Animal {
 	 * 
 	 * first line in any constructor is 
 	 * either this() or super()
-	 * default is this()
+	 * default is super()
 	 */
 	
 	public Animal() {
