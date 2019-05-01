@@ -11,14 +11,14 @@ public class Q3 {
 	public static void reverse(String s) {
 		char[] carr= s.toCharArray();
 		
-		try {
-		for(int i=5;i<carr.length;i--) 
+		System.out.println(carr.length+"Hey");
+		for(int i=carr.length-1;i>=0;i--) 
 		{
 			System.out.print(carr[i]);
 		}
-		}catch(Exception e) {
-			
 		}
+			
+	
 		
 /*		String str;
 		
@@ -31,4 +31,4 @@ public class Q3 {
 		
 	}
 
-}
+
