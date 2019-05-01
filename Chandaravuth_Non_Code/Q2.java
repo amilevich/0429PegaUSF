@@ -1,18 +1,19 @@
 package test1;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
+import java.util.ArrayList;
+
+
 
 public class Q2 {
 	
 	
 	public static void main(String args[]) {
-		Q2 q = new Q2();
-		
-		System.out.println(q.fibonacci(6));
+
+			printFibonacci();
 		
 	}
-	//asdadsadsadsadas
-	public  int fibonacci(int n) {
+	
+	public static int fibonacci(int n) {
 		int result;
 		if(n==0) {
 			return 0;
@@ -21,9 +22,18 @@ public class Q2 {
 		}else {
 			result = fibonacci(n-1)+fibonacci(n-2);
 		}
-		
-		
 		return result;
+	}
+	
+	public static void printFibonacci() {
+		ArrayList<Integer> arrList =  new ArrayList<>();
+		for(int i=0;i<25;i++) {
+			arrList.add(fibonacci(i));
+			//System.out.println(arrList);
+		}
+		System.out.println(arrList);
+		
+		
 	}
 
 }
