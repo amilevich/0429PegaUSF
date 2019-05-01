@@ -11,7 +11,7 @@ public class Q2 {
 		System.out.println(q.fibonacci(6));
 		
 	}
-	
+	//asdadsadsadsadas
 	public  int fibonacci(int n) {
 		int result;
 		if(n==0) {
