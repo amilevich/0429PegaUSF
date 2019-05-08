@@ -1,0 +1,8 @@
+walter,white,4232,1300.0,0.0
+tim,burton,3455,1110.0,50.0
+jose,ramirez,1234,2094.0,-2.0
+Abdou,Thioye,1989,5425.0,50.0
+Dior,Gaye,1234,3561.0,-2.0
+Aissatou,Thioye,2016,1250.0,-50.0
+moustapha,niass,1234,5845.0,566.0
+moussa,fall,2585,4758.0,55.0
