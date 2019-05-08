@@ -1,1 +1,0 @@
-Richard McLaughlin's code
