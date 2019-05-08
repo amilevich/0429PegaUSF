@@ -107,15 +107,19 @@ public class Customer implements User, Serializable {
 	@Override
 	public boolean deposit(Account account, double amount) {
 		try {
-			if (amount > 0.0) {
-				account.setAccountBalance(account.getAccountBalance() + amount);
-				DecimalFormat df = new DecimalFormat("###,###,##0.00");
-				System.out.println("Cash Deposited in the amount of $" + df.format(amount));
-				System.out.println(account);
-				// TODO logging of transaction
-				return true;
+			if (account.getStatus().equals(AccountStatus.OPEN)) {
+				if (amount > 0.0) {
+					account.setAccountBalance(account.getAccountBalance() + amount);
+					DecimalFormat df = new DecimalFormat("###,###,##0.00");
+					System.out.println("Cash Deposited in the amount of $" + df.format(amount));
+					System.out.println(account);
+					// TODO logging of transaction
+					return true;
+				} else {
+					return false;
+				}
 			} else {
-				return false;
+				System.out.println("Account Status Must Be OPEN!");
 			}
 		} catch (NullPointerException e) {
 			e.printStackTrace();
