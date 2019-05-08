@@ -132,19 +132,26 @@ public class Customer implements User, Serializable {
 	@Override
 	public boolean transfer(Account accountSource, Account accountDest, double amount) {
 		try {
-			if (amount > 0.0) {
-				if (accountSource.getAccountBalance() >= amount) {
-					accountDest.setAccountBalance(accountSource.getAccountBalance() + amount);
-					accountSource.setAccountBalance(accountSource.getAccountBalance() - amount);
-					DecimalFormat df = new DecimalFormat("###,###,##0.00");
-					System.out.println("Cash transfered in the amount of $" + df.format(amount) + "\nFrom "
-							+ accountSource.getAccountType() + "# " + accountSource.getAccountNumber() + "\nInto "
-							+ accountDest.getAccountType() + "# " + accountDest.getAccountNumber());
-					// TODO logging of transaction
-					return true;
+			if (accountSource.getStatus().equals(AccountStatus.OPEN)) {
+				if (accountDest.getStatus().equals(AccountStatus.OPEN)) {
+
+					if (amount > 0.0) {
+						if (accountSource.getAccountBalance() >= amount) {
+							accountDest.setAccountBalance(accountSource.getAccountBalance() + amount);
+							accountSource.setAccountBalance(accountSource.getAccountBalance() - amount);
+							DecimalFormat df = new DecimalFormat("###,###,##0.00");
+							System.out.println("Cash transfered in the amount of $" + df.format(amount) + "\nFrom "
+									+ accountSource.getAccountType() + "# " + accountSource.getAccountNumber()
+									+ "\nInto " + accountDest.getAccountType() + "# " + accountDest.getAccountNumber());
+							// TODO logging of transaction
+							return true;
+						}
+					} else {
+						return false;
+					}
 				}
 			} else {
-				return false;
+				System.out.println("Account Status Must Be OPEN!");
 			}
 		} catch (NullPointerException e) {
 			e.printStackTrace();
