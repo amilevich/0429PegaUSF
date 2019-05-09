@@ -9,16 +9,53 @@ public class Customer {
 	private String passwordc;
 	private String firstname;
 	private String lastname;
-	private int [] accountnumber;
+	private String accountnumber;
 	private int idcustomer;
+	
+
 	
 	
 	public Customer() {
 		
 	}
+	public Customer(String firstname, String lastname, int idcustomer,String accountnumber) {
+		
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.accountnumber = accountnumber;
+		this.idcustomer = idcustomer;
+	}
+/*	public Customer(String username, String passwordc, String firstname, String lastname 
+			 ) {
+		
+		this.username = username;
+		this.passwordc = passwordc;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		
+	}*/
+	public Customer(String username, String passwordc, String firstname, String lastname,String accountnumber) {
+		
+		this.username = username;
+		this.passwordc = passwordc;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.accountnumber=accountnumber;
+		
+	}
 
-
-	public Customer(String username, StorePassword password, String firstname, String lastname, int[] accountnumber,
+	public Customer(String username, String passwordc, String firstname, String lastname, String accountnumber,
+			 int idcustomer) {
+		
+		this.username = username;
+		this.passwordc = passwordc;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.accountnumber = accountnumber;
+		this.idcustomer = idcustomer;
+	}
+	
+	public Customer(String username, StorePassword password, String firstname, String lastname, String accountnumber,
 			 int idcustomer) {
 		super();
 		this.username = username;
@@ -79,11 +116,11 @@ public class Customer {
 
 
 
-	public int[] getAccountnumber() {
+	public String getAccountnumber() {
 		return accountnumber;
 	}
 
-	public void setAccountnumber(int[] accountnumber) {
+	public void setAccountnumber(String accountnumber) {
 		this.accountnumber = accountnumber;
 	}
 
@@ -118,7 +155,7 @@ public class Customer {
 	}*/
 	@Override
 	public String toString() {
-		return ""+idcustomer+":"+firstname+":"+lastname+":"+username+":"+removeComma(accountnumber)+":"+passwordc+"";
+		return ""+idcustomer+":"+firstname+":"+lastname+":"+username+":"+(accountnumber)+":"+passwordc+"";
 	}
 
 
