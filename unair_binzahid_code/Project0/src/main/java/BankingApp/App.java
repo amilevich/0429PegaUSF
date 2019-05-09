@@ -72,6 +72,27 @@ import java.util.*;
 			int o6 = options2.nextInt();
 			if (o6 == 1) {
 				System.out.println("Thank you, come again!");
+			} else if (o6 == 2) {
+				System.out.println("\nPlease select an option. \n1: Withdraw \n3: Transfer");
+				int o7 = options2.nextInt();
+				if (o7 == 3) {
+					System.out.println("\n How much would you like to transfer?");
+					Scanner options3 = new Scanner(System.in);
+					String o3 = options3.next();
+					System.out.println("\n Which acc would you like to transfer to?"
+							+ "\n Please enter username: ");
+					String o4 = options3.next();
+					System.out.println("\n Are you sure you want to send $" + o3 + " to " + o4 + "?");
+					System.out.println("\n 1:YES \n 2:No");
+					String o5 = options3.next();
+					System.out.println("Confirmed! Sending " + o3 + " to " + o4);
+					System.out.println("\n Are you done? \n1:Yes \n2:No");
+					int o77 = options3.nextInt();
+					if (o77 == 1) {
+						System.out.println("Thank you, come again!");
+					}
+					
+				}
 			}
 			break;
 			
@@ -84,7 +105,7 @@ import java.util.*;
 			System.out.println("\n Are you sure you want to send $" + o3 + " to " + o4 + "?");
 			System.out.println("\n 1:YES \n 2:No");
 			String o5 = options3.next();
-			System.out.println("Confirmed! Sending " + o3 + " to " + o4);
+			System.out.println("Confirmed! Sending $" + o3 + " to " + o4);
 			System.out.println("\n Are you done? \n1:Yes \n2:No");
 			int o7 = options3.nextInt();
 			if (o7 == 1) {
@@ -112,7 +133,7 @@ import java.util.*;
 		String e2 = emp.next();
 		System.out.println("\nWelcome " + e1 + ", what would you like to do?");
 		System.out.println("\n 1: View accounts"
-				+ "\n 2: View applications");
+				+ "\n 2: View applications *1*");
 		int e3;
 			e3 = emp.nextInt();
 			switch(e3) {
@@ -120,7 +141,7 @@ import java.util.*;
 			case 1: System.out.println("\nAccounts on file: "
 					+ "\n[Username: LauraC, Name: Laura Chen, Password: elephant]"
 					+ "\n	~~Balance: $450 "
-					+ "\n[Username: Jeff43, Name: Jefferson Jay, Password: lemons]"
+					+ "\n[Username: Jeff, Name: Jefferson Jay, Password: lemons]"
 					+ "\n	~~Balance: $1300 "
 					+ "\n[Username: Jimmyd, Name: Jimmy Do, Password: eatme]"
 					+ "\n	~~Balance: $0");
@@ -185,8 +206,8 @@ import java.util.*;
 						int a7 = admin.nextInt();
 						if (a7 == 3) {
 							System.out.println("\nPlease select an account"
-									+ "\n 1: LauraC, Laura Chan, pass: elephant, $450, -$75 \n"
-									+ "\n 2: Jeff, Jefferson Jay, pass: lemons, $1300, +$650 \n"
+									+ "\n 1: LauraC, Laura Chan, pass: elephant, $450, +$75, t: $100 -> Jeff \n"
+									+ "\n 2: Jeff, Jefferson Jay, pass: lemons, $1300, 0, r: $100 <- LauraC \n"
 									+ "\n 3: Jimmyd, Jimmy Do, pass: plays, $0, 0");
 									Scanner choice3 = new Scanner(System.in);
 									int c5 = choice3.nextInt();
@@ -198,8 +219,8 @@ import java.util.*;
 										int c6 = choice3.nextInt();
 										System.out.println("\nDone, deleted"
 												+ "\nAccounts on file: " 
-												+ "\n~~LauraC, Laura Chan, pass: elephant, $450, -$75"
-												+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300, +$650");
+												+ "\n~~LauraC, Laura Chan, pass: elephant, $450"
+												+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300");
 									}
 									System.out.println("\n Are you done? \n1:Yes \n2:No");
 									int a6 = admin.nextInt();
@@ -212,7 +233,7 @@ import java.util.*;
 					
 			case 2: System.out.println("\nAccounts on file: \n "
 					+ "\n~~LauraC, Laura Chan, pass: elephant, $450, +$75 \n"
-					+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300, +$650 \n"
+					+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300, 0 \n"
 					+ "\n~~Jimmyd, Jimmy Do, pass: plays, $0, 0 \n");
 					System.out.println("\n Are you done? \n1:Yes \n2:No");
 					int a5 = admin.nextInt();
@@ -222,8 +243,8 @@ import java.util.*;
 					break;
 			
 			case 3: System.out.println("\nPlease select an account"
-					+ "\n 1: LauraC, Laura Chan, pass: elephant, $450, -$75 \n"
-					+ "\n 2: Jeff, Jefferson Jay, pass: lemons, $1300, +$650 \n"
+					+ "\n 1: LauraC, Laura Chan, pass: elephant, $450, +$75 \n"
+					+ "\n 2: Jeff, Jefferson Jay, pass: lemons, $1300, 0 \n"
 					+ "\n 3: Jimmyd, Jimmy Do, pass: plays, $0, 0");
 					Scanner choice3 = new Scanner(System.in);
 					int c5 = choice3.nextInt();
@@ -235,8 +256,8 @@ import java.util.*;
 						int c6 = choice3.nextInt();
 						System.out.println("\nDone, deleted"
 								+ "\nAccounts on file: " 
-								+ "\n~~LauraC, Laura Chan, pass: elephant, $450, -$75"
-								+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300, +$650");
+								+ "\n~~LauraC, Laura Chan, pass: elephant, $450, +$75"
+								+ "\n~~Jeff, Jefferson Jay, pass: lemons, $1300, 0");
 					}
 					System.out.println("\n Are you done? \n1:Yes \n2:No");
 					int a6 = admin.nextInt();
