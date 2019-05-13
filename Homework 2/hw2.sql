@@ -77,7 +77,7 @@ select getlength(name) from mediatype;
 SELECT * FROM Customer INNER JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId;
 
 --4.2
-SELECT CustomerId, FirstName, LastName, Total FROM Customer
+SELECT Customer.CustomerId, Customer.FirstName, Customer.LastName, Invoice.Total FROM Customer
 FULL OUTER JOIN Invoice 
 ON Customer.CustomerId = Invoice.CustomerId;
 
@@ -91,6 +91,6 @@ SELECT Name FROM Artist
 CROSS JOIN Album WHERE Artist.ArtistId = Album.ArtistId ORDER BY Artist.Name ASC;
 
 --4.5
-SELECT * FROM Employee JOIN Employee on Employee.ReportTo = Employee.EmployeeId;
+SELECT * FROM Employee JOIN Employee on Employee.ReportsTo = Employee.EmployeeId;
 
 
