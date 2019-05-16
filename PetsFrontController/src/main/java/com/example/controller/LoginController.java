@@ -17,7 +17,7 @@ public class LoginController {
 		p = pdImpl.selectPetByName(name);
 		
 		if(name.equals(p.getName()) & type.equals(p.getType())) {
-			
+			request.getSession().setAttribute("Pet", p);
 			return "/html/Home.html";
 		}
 		
