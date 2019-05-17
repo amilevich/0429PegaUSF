@@ -1,0 +1,6 @@
+2019-05-17 13:20:36 INFO  MainDriver:11 - this is info
+2019-05-17 13:20:36 ERROR MainDriver:12 - message about error
+java.lang.IndexOutOfBoundsException
+	at com.example.log.MainDriver.main(MainDriver.java:12)
+2019-05-17 13:20:36 FATAL MainDriver:13 - fatal message
+2019-05-17 13:20:36 WARN  MainDriver:14 - warning message
