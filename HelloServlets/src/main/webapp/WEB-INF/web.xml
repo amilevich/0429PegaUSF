@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>HelloServlets</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Hello World Example -->
+  <servlet>
+  		<servlet-name>hwServlet</servlet-name>
+  		<servlet-class>com.example.servlets.HelloWorldServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>hwServlet</servlet-name>
+  		<url-pattern>/hwUrl</url-pattern>
+  </servlet-mapping>
+  
+  <!-- ServletConfig Example (local) -->
+  <!--  its parameters are specified
+  for a particular servlet and are unknown to
+  other servlets -->
+  <servlet>
+  	<servlet-name>servletConfigExample</servlet-name>
+  	<servlet-class>com.example.co.ServletConfigExample</servlet-class>
+  	
+  	<init-param>
+  		<param-name>favoriteColor</param-name>
+  		<param-value>GreenBlueOrange</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>numberOfLegs</param-name>
+  		<param-value>8</param-value>
+  	</init-param>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <!-- ServletContext Example (global) -->
+  <!-- its parameters are specified for an entire application
+  outside of any particular servlet and are available
+  to all servlets within this application -->
+  <servlet>
+  	<servlet-name>servletContextExample</servlet-name>
+  	<servlet-class>com.example.co.ServletContextExample</servlet-class>
+  	<load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <context-param>
+  	<param-name>databaseUrl</param-name>
+  	<param-value>abc.com</param-value>
+  </context-param>
+  
+</web-app>

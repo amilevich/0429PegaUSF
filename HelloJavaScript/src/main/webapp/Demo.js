@@ -11,7 +11,7 @@
  *  There are many more advanced server side versions of JS such as
  *  Node.JS which allows you to add more functionality to a website
  *  
- *  DATA TYPES:
+ *  DATA TYPES: bunsofans
  *  STRING
  *  NUMBER
  *  BOOLEAN
@@ -214,5 +214,74 @@ let funcTwo = function() {
 	console.log(someVariable);
 }();
 
+//Callback functions
+//Simply put: function that is to be executed after another
+//function has finished executing
+
+// any function that is passed as an argument into
+// another function
+
+//function doHomework(subject, callback){
+//	alert(`Starting my ${subject} homework.`);
+//	callback();
+//}
+//function alertFinished(){
+//	alert('Finished my homework');
+//}
+//doHomework('math', alertFinished);
+
+//closure
+// a closure is an inner function that has access to the
+// outer function's variables
+// The closure has 3 scope chains:
+// 1)it has access to its own scope
+// 2) it has access to the outer function's variables
+// 3) it has access to global variables
+
+let foo = (function() {
+	let bar = 0;
+	return function() {
+		return bar += 1
+	};
+})();
+
+//console.log(bar);
+// bar is not global, cannot directly call it
+//console.log(foo());
+
+//Inheritance
+//Prototypical inheritance
+
+/*
+ * In JavaScript, when it comes to inheritance,
+ * it only has one construct: objects.
+ * Each object has a private property which holds
+ * a link to another object called its prototype.
+ * The prototype has a prototype of its own, and so on
+ * until an object is reached with null as its prototype.
+ * 
+ * Let us create an object "o" from function "f" with its
+ * own properties
+ */
+
+/* o.[[Prototype]]; properties b and c
+ * o.[[Prototype]].[[Prototype]] - Object.prototype
+ * o.[[Prototype]].[[Prototype]].[[Prototype]] - null
+ * this would be the end of the prototype chain
+ * as null, by definition, has no [[Prototype]]
+ */
+let f = function(){
+	this.a = 1;
+	this.b = 2;
+}
+let o = new f();
+// add properties
+f.prototype.b = 3;
+f.prototype.c = 4;
+let p = f.prototype;
+console.log(p.b); //3
+
+console.log(o.a);
+console.log(o.b);
 
 
